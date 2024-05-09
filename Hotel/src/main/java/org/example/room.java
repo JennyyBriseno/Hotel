@@ -1,37 +1,49 @@
 package org.example;
 
 public class room {
-    private String name;
-    private int capacity;
-    private boolean isOccupied;
+    private boolean isDirty;
+    private double price;
+    private boolean isAvailable;
+    private int numberOfBeds;
 
-    public String getName() {
-        return name;
+    public boolean isDirty() {
+        return isDirty;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDirty(boolean dirty) {
+        isDirty = dirty;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public double getPrice() {
+        return price;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public boolean isOccupied() {
-        return isOccupied;
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void setOccupied(boolean occupied) {
-        isOccupied = occupied;
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
-    public room(String name, int capacity, boolean isOccupied){
-        this.name = name;
-        this.capacity = capacity;
-        this.isOccupied =isOccupied;
+    public int getNumberOfBeds() {
+        return numberOfBeds;
     }
+
+    public void setNumberOfBeds(int numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
+    }
+
+    public room(boolean isDirty, double price, boolean isAvailable, int numberOfBeds){
+        this.isDirty = isDirty;
+        this.isAvailable =isAvailable;
+        this.numberOfBeds =numberOfBeds;
+        this.price = price;
+    }
+
+
 }
