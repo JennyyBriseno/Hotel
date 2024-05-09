@@ -1,5 +1,7 @@
 package org.example;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class room {
     private int numberOfBeds;
     private double price;
@@ -40,5 +42,14 @@ public class room {
     }
     public boolean isAvailable(){
         return ! Occupied && ! dirty;
+    }
+    //main method for testing
+    public static void main(String[] arg){
+        room room1 = new room(2, 100.0, false, false);
+        System.out.println("Number of Beds: " + room1.getNumberOfBeds());
+        System.out.println("Price: $" + room1.getPrice());
+        System.out.println("Occupied: " + room1.isOccupied());
+        System.out.println("Dirty: " + room1.isDirty());
+        System.out.println("Available: " + room1.isAvailable());
     }
 }
