@@ -16,6 +16,11 @@ public class Reservation {
         this.isWeekend = isWeekend;
         this.reservationTotal = reservationTotal;
     }
+    public Reservation(String roomType, int nightsStayed, boolean isWeekend) {
+        this.roomType = roomType;
+        this.nightsStayed = nightsStayed;
+        this.isWeekend = isWeekend;
+    }
 
     //Getters and Setters
     public String getRoomType() {
@@ -48,5 +53,28 @@ public class Reservation {
 
     public double getReservationTotal() {
         return reservationTotal;
+    }
+
+    //methods
+
+    public double setRoomPrice(String roomType) {
+        if(roomType.equals("double")){
+            this.roomPrice = 124;
+        } else if (roomType.equals("king")){
+            this.roomPrice = 139;
+        }
+        return this.roomPrice;
+
+    }
+
+    public double calculateReservationTotal(){
+        if(isWeekend){
+            reservationTotal = setRoomPrice(roomType) * nightsStayed * .10;
+            return reservationTotal;
+        }
+        else {
+            reservationTotal = setRoomPrice(roomType) * nightsStayed;
+            return reservationTotal;
+        }
     }
 }
